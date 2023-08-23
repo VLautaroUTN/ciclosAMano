@@ -1,7 +1,7 @@
 import tkinter
 
 def generar_gcode():
-    print("iniciando")
+    etiquetaFinal["text"] = "iniciando"
     respuesta = open("respuesta.txt", "w")
 
     x1 = int(valX1.get())
@@ -12,18 +12,20 @@ def generar_gcode():
 
     resta = x1 - x2
     if resta % pasos != 0:
-        print("Los pasoss no son un divisor del diametro a calar")
+        etiquetaFinal["bg"] = "yellow"
+        etiquetaFinal["text"] = "Los pasoss no son un divisor del diametro a calar"
     else:
         vuelta = 1
         while True:
             XActual = x1 - (pasos * vuelta)
-            print("Vuelta a X =", XActual)
+            etiquetaFinal["text"] = "Vuelta a X =", XActual
             respuesta.write("G01 X{0}\n".format(XActual))
             respuesta.write("G01 Z{0}\n".format(Z2))
             respuesta.write("G00 x{0} Z{1}\n".format(XActual+1, Z1))
             vuelta += 1
             if XActual == x2:
-                print("Fin de programa")
+                etiquetaFinal["bg"] = "green"
+                etiquetaFinal["text"] = "Terminado: respuestas.txt"
                 break
 
     respuesta.close()
@@ -38,7 +40,7 @@ textZ1 = tkinter.Label(ventana, text = "Z-Inicio", bg = "gray", font = "Arial 16
 textX2 = tkinter.Label(ventana, text = "X-Final", bg = "gray", font = "Arial 16")
 textZ2 = tkinter.Label(ventana, text = "Z-final", bg = "gray", font = "Arial 16")
 textoPaso = tkinter.Label(ventana, text = "mm por pasada", bg = "gray", font = "Arial 16")
-final = tkinter.Label(ventana, bg = "gray")
+etiquetaFinal = tkinter.Label(ventana, bg = "gray")
 
 valX1 = tkinter.Entry(ventana, font = "Arial 20", bg = "white")
 valZ1 = tkinter.Entry(ventana, font = "Arial 20", bg = "white")
@@ -73,8 +75,8 @@ textoPaso.config(width="13", height="2")
 valPasada.grid(row=5, column=1)
 
 botonCalcular.grid(row=6, column=1)
-final.grid(row=7,column=1)
-final.config(width="10", height="2")
+etiquetaFinal.grid(row=7,column=1)
+etiquetaFinal.config(height="4")
 
 
 
