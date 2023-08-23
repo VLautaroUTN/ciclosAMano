@@ -46,7 +46,7 @@ textX2 = tkinter.Label(ventana, text = "X-Final", bg = "gray", font = "Arial 16"
 textZ2 = tkinter.Label(ventana, text = "Z-final", bg = "gray", font = "Arial 16")
 textoPaso = tkinter.Label(ventana, text = "mm por pasada", bg = "gray", font = "Arial 16")
 etiquetaFinal = tkinter.Label(ventana, bg = "gray")
-AutorLbl = tkinter.Label(ventana, text="V4ld3z Cristian Lautaro :D" ,bg="white")
+AutorLbl = tkinter.Label(ventana, text="\/4£)32 £4(_)74I20" ,bg="white")
 
 valX1 = tkinter.Entry(ventana, font = "Arial 20", bg = "white")
 valZ1 = tkinter.Entry(ventana, font = "Arial 20", bg = "white")
