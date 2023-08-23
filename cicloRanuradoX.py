@@ -3,11 +3,21 @@ if __name__ == "__main__":
     print("...")
     respuesta = open("respuesta.txt", "w")
 
-    x1 = 56#int(input("Valor X1"))
-    Z1 = 0#int(input("valor Z1"))
-    x2 = 10#int(input("valor x2"))
-    Z2 = -8#int(input("valor Z2"))
-    pasos = 2#int(input("Ingrese proifundidad de desvaste"))
+    x1 = float(input("Valor X1"))
+    if x1 % 1 == 0:
+        x1 = int(x1)
+    Z1 = float(input("valor Z1"))
+    if Z1 % 1 == 0:
+        Z1 = int(Z1)
+    x2 = float(input("valor x2"))
+    if x2 % 1 == 0:
+        x2 = int(x2)
+    Z2 = float(input("valor Z2"))
+    if Z2 % 1 == 0:
+        Z2 = int(Z2)
+    pasos = float(input("Ingrese proifundidad de desvaste"))
+    if pasos % 1 == 0:
+        pasos = int(pasos)
 
     resta = x1 - x2
     if resta % pasos != 0:

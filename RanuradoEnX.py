@@ -5,11 +5,21 @@ def generar_gcode():
         etiquetaFinal["text"] = "iniciando"
         respuesta = open("respuesta.txt", "w")
 
-        x1 = int(valX1.get())
-        Z1 = int(valZ1.get())
-        x2 = int(valX2.get())
-        Z2 = int(valZ2.get())
-        pasos = int(valPasada.get())
+        x1 = float(valX1.get())
+        if x1 % 1 == 0:
+            x1 = int(x1)
+        Z1 = float(valZ1.get())
+        if Z1 % 1 == 0:
+            Z1 = int(Z1)
+        x2 = float(valX2.get())
+        if x2 % 1 == 0:
+            x2 = int(x2)
+        Z2 = float(valZ2.get())
+        if Z2 % 1 == 0:
+            Z2 = int(Z2)
+        pasos = float(valPasada.get())
+        if pasos % 1 == 0:
+            pasos = int(pasos)
 
         resta = x1 - x2
         if resta % pasos != 0:
